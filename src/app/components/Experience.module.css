@@ -1,0 +1,119 @@
+.experience {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  background: #f3efe9;
+}
+
+.grid {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 4rem;
+}
+
+.block {
+  text-align: center;
+  padding: 2rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.block:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.block:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.block:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.title {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  color: #2a2a2a;
+  letter-spacing: 0.05em;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #2a2a2a;
+  transition: all 0.4s ease;
+}
+
+.title:hover::after {
+  width: 100%;
+}
+
+.description {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.7;
+  color: #5a5a5a;
+  font-weight: 300;
+}
+
+.hiddenPhraseContainer {
+  position: absolute;
+  bottom: 12rem;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  opacity: 0;
+  transition: all 0.5s ease;
+  pointer-events: none;
+  text-align: center;
+}
+
+.hiddenPhraseContainer p {
+  font-size: clamp(1.3rem, 2vw, 1.5rem);
+  font-weight: 200;
+  letter-spacing: 3px;
+  color: #5a5a5a;
+}
+
+.experience:has(.title#one:hover) .hiddenPhraseContainer#time,
+.experience:has(.title#two:hover) .hiddenPhraseContainer#space,
+.experience:has(.title#three:hover) .hiddenPhraseContainer#presence {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition: all 1.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .experience {
+    padding: 4rem 1.5rem;
+  }
+
+  .grid {
+    gap: 3rem;
+  }
+
+  .block {
+    padding: 1rem;
+  }
+}

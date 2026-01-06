@@ -1,0 +1,82 @@
+.manifesto {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(
+    -45deg,
+    #fefefe,
+    #e0e0e0,
+    #fefefe,
+    #e0e0e0,
+    #fefefe,
+    #e0e0e0
+  );
+  background-size: 600% 600%;
+  animation: gradientShift 12s ease infinite;
+}
+
+.content {
+  max-width: 700px;
+  text-align: center;
+}
+
+.line {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1.8;
+  color: #3a3a3a;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.line:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.line:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.line:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.line:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.line:nth-child(5) {
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .manifesto {
+    padding: 3rem 1.5rem;
+  }
+
+  .line {
+    margin-bottom: 1.2rem;
+  }
+}
