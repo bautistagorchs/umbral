@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500"],
@@ -29,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${cormorant.variable} ${inter.variable}`}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

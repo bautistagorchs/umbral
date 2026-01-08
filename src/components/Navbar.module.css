@@ -1,0 +1,95 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.5rem 2rem;
+  background: rgba(254, 254, 254, 0.4);
+  background: transparent;
+  backdrop-filter: blur(4px);
+  /* border-bottom: 1px solid rgba(42, 42, 42, 0.05); */
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.navbar.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  font-size: 0.95rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: #5a5a5a;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 0.25rem 0;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #2a2a2a;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: #2a2a2a;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink.active {
+  color: #2a2a2a;
+}
+
+.navLink.active::after {
+  width: 100%;
+  background-color: #2a2a2a;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .navList {
+    gap: 2rem;
+  }
+
+  .navLink {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navList {
+    gap: 1.5rem;
+  }
+
+  .navLink {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+}
