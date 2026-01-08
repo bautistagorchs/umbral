@@ -4,8 +4,11 @@ export default function Footer() {
   return (
     <footer className={s.footer}>
       <div className={s.content}>
-        <p className={s.closing}>No es un destino.</p>
-        <p className={s.closing}>Es un cruce.</p>
+        <h1 className={s.titleRevelation}>UMBRAL</h1>
+        <div>
+          <p className={s.closing}>No es un destino.</p>
+          <p className={s.closing}>Es un cruce.</p>
+        </div>
 
         <a
           href="mailto:info@umbral.com"
