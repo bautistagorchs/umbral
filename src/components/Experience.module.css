@@ -116,4 +116,16 @@
   .block {
     padding: 1rem;
   }
+
+  .title {
+    cursor: default;
+  }
+
+  .title::after {
+    display: none;
+  }
+
+  .hiddenPhraseContainer {
+    display: none;
+  }
 }
