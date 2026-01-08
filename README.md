@@ -1,6 +1,6 @@
 # UMBRAL
 
-Umbral es un proyecto web conceptual.
+Proyecto web conceptual.
 
 No propone una experiencia.
 La acompaña.
