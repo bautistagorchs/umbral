@@ -42,3 +42,7 @@ Proyecto en desarrollo CONTINUO.
 ---
 
 Algunas cosas se sienten.
+
+```bash
+nvm use 20
+```
